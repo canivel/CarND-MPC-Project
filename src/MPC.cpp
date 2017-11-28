@@ -5,9 +5,7 @@
 
 using CppAD::AD;
 
-// The solver takes all the state variables and actuator
-// variables in a singular vector. Thus, we should to establish
-// when one variable starts and another ends to make our lifes easier.
+// The solver takes all the state variables in a single vector
 size_t x_start = 0;
 size_t y_start = x_start + N;
 size_t psi_start = y_start + N;
