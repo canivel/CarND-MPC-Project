@@ -1,6 +1,20 @@
 # CarND-Controls-MPC
 Self-Driving Car Engineer Nanodegree Program
 
+## Writeup
+
+- **The Model**: *Student describes their model in detail. This includes the state, actuators and update equations.*
+
+The kinematic model includes the vehicle's x and y coordinates, orientation angle (psi), and velocity, as well as the cross-track error and psi error (epsi). Actuator outputs are acceleration and delta (steering angle). The model combines the state and actuations from the previous timestep to calculate the state for the current timestep based on the equations showed during the course.
+
+- **Timestep Length and Elapsed Duration (N & dt)**: *Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried.*
+
+The values chosen for N and dt are 15 and 0.05, respectively. I got this values by try and error using the inital values suggested by Udacity's(10 and 0.1). Adjusting either N or dt (even by small amounts) often produced erratic behavior. Other values tried include 12 / 0.08, 8 / 0.1, 6 / 0.2, and many others. 
+
+- **Polynomial Fitting and MPC Preprocessing**: *A polynomial is fitted to waypoints. If the student preprocesses waypoints, the vehicle state, and/or actuators prior to the MPC procedure it is described.*
+
+The waypoints are preprocessed by transforming them to the vehicle's perspective. This simplifies the process to fit a polynomial to the waypoints because the vehicle's x and y coordinates are now at the origin (0, 0) and the orientation angle is also zero. 
+
 ---
 
 ## Dependencies
